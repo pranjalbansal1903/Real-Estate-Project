@@ -1,21 +1,37 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+
+
+// Path to .env file relative to index.js
 dotenv.config();
+// dotenv.config({path:.env});
 import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
 import listingRouter from './routes/listing.route.js';
 
-mongoose
-.connect(process.env.MONGO)
-.then(() => {
-    console.log('connected to MongoDB!');
-})
-.catch((err) => {
-    console.log(err);
+// mongoose
+// .connect(process.env.MONGO)
+// .then(() => {
+//     console.log('connected to MongoDB!');
+// })
+// .catch((err) => {
+//     console.log(err);
 
-});
+// });
+(async () => {
+    try {
+      await mongoose.connect(process.env.MONGO, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      console.log("Connected to DB");
+    } catch (error) {
+      console.log(error.message);
+      process.exit(1);
+    }
+  })();
 
 
 
