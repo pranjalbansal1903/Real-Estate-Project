@@ -253,17 +253,19 @@ setLoading(false);
             <div className='flex items-center gap-2'>
               <input onChange={handleChange} 
               value={formData.bathrooms}
-               type="number" id='bathrooms' min='1' max='10' required className='p-3 border border-gray-300' />
+               type="number" id='bathrooms' min='1' max='100000' required className='p-3 border border-gray-300' />
               <p>Baths</p>
             </div>
 
             <div className='flex items-center gap-2'>
               <input onChange={handleChange} 
               value={formData.regularPrice}
-               type='number' id='regularPrice' min='1' max='10' required className='p-3 border border-gray-300' />
+               type='number' id='regularPrice' min='1' max='100000' required className='p-3 border border-gray-300' />
               <div className='flex flex-col items-center'>
                 <p>Regular Price</p>
+                {formData.type === 'rent' &&(
                 <span className='text-xs'>($ / month)</span>
+                )}
               </div>
             </div>
             
@@ -276,7 +278,9 @@ value={formData.discountPrice}
 type="number" id='discountPrice' min='0' max='100000' required className='p-3 border border-gray-300' />
 <div className='flex flex-col items-center'>
   <p>Discounted Price</p>
+  {formData.type === 'rent' && (
   <span className='text-xs'>($ / month)</span>
+  )}
 </div>
 </div>
 

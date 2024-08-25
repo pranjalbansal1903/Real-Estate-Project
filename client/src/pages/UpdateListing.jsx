@@ -3,6 +3,7 @@ import { getStorage, getDownloadURL, ref, uploadBytesResumable } from 'firebase/
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams} from 'react-router-dom';
+
 export default function UpdateListing() {
   const {currentUser} = useSelector(state=>state.user)
   const [files, setFiles] = useState([]);
@@ -37,7 +38,7 @@ useEffect(() =>
       const listingId = params.listingId;
       const res = await fetch(`/api/listing/get/${listingId}`);
       const data = await res.json();
-      if (data.success==-false)
+      if (data.success===false)
       {
         console.log(data.message);
         return;
@@ -284,7 +285,9 @@ setLoading(false);
                type='number' id='regularPrice' min='1' max='10' required className='p-3 border border-gray-300' />
               <div className='flex flex-col items-center'>
                 <p>Regular Price</p>
+                {formData.type === 'rent' &&(
                 <span className='text-xs'>($ / month)</span>
+                )}
               </div>
             </div>
             
@@ -297,7 +300,9 @@ value={formData.discountPrice}
 type="number" id='discountPrice' min='0' max='100000' required className='p-3 border border-gray-300' />
 <div className='flex flex-col items-center'>
   <p>Discounted Price</p>
-  <span className='text-xs'>($ / month)</span>
+  {formData.type === 'rent' &&(
+
+  <span className='text-xs'>($ / month)</span> )}
 </div>
 </div>
 
@@ -365,3 +370,5 @@ type="number" id='discountPrice' min='0' max='100000' required className='p-3 bo
     </main>
   );
 }
+
+
