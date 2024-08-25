@@ -327,14 +327,12 @@ return (
                 className='h-16 w-16 object-contain'
               />
             </Link>
-            <Link 
-              to={`/listing/${listing._id}`} 
-              className='flex-1 text-slate-700 font-semibold hover:underline truncate'
-            >
+            <Link to={`/listing/${listing._id}`}
+              className='flex-1 text-slate-700 font-semibold hover:underline truncate'>
               <p>{listing.name}</p>
             </Link>
             <div className='flex flex-col items-center'>
-              <button onclick={()=>handleListingDelete(listing._id)} className='text-red-700 uppercase'>
+              <button onClick={()=>handleListingDelete(listing._id)} className='text-red-700 uppercase'>
                 Delete
               </button>
               <Link to = {`/update-listing/${listing._id}`}>

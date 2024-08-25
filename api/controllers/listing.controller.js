@@ -103,7 +103,7 @@ if (!listing)
     return next (errorHandler(404, 'listing not found'));
 
 }
-res.json(200).json(listing);
+res.status(200).json(listing);
 
     }
 

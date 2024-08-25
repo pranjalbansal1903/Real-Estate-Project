@@ -172,8 +172,7 @@ if (data.success===false)
 }
 
 
-
- navigate(`/listings/${data._id}`)
+ navigate(`/listing/${data._id}`);
 }
 
 
@@ -203,7 +202,7 @@ setLoading(false);
            type="text" placeholder='Name' className='border p-3 rounded-lg' id='name' maxLength='62' minLength='10' required />
           <textarea  onChange={handleChange} value = {formData.description}
           placeholder='Description' className='border p-3 rounded-lg' id='description' required />
-          <input  
+          <input  onChange={handleChange} value = {formData.address}
            type="text" placeholder='Address' className='border p-3 rounded-lg' id='address' required />
 
           <div className='flex gap-6 flex-wrap'>

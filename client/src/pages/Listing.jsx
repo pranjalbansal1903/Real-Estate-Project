@@ -7,10 +7,12 @@ import SwiperCore from 'swiper';
 import {Navigation} from 'swiper/modules';
 import 'swiper/css/bundle';
 
+
+SwiperCore.use([Navigation]);
 export default function Listing() {
    
-   SwiperCore.use([Navigation]);
-
+  
+    // const { listingId } = useParams();
    
     const [listing, setListing ] = useState(null);
 
@@ -30,8 +32,10 @@ setLoading(true);
 
 
          
-        const res = await fetch (`/api/listing/get/$
-            {params.listingId}`);
+        
+            const res = await fetch(`/api/listing/get/${params.listingId}`);
+
+
             const data = await res.json();
             if (data.success === false){
                setError(true);
@@ -86,7 +90,7 @@ setLoading(true);
             {listing.imageUrls.map((url) => (
                  <SwiperSlide key = 
             {url}>
-                <div className='h - [550px]' style={{background:`url(${url}) center no-repeat` ,backgroundSize:'cover'}}>
+                <div className='h-[550px]' style={{background:`url(${url}) center no-repeat` ,backgroundSize:'cover'}}>
 
 
 
@@ -105,4 +109,5 @@ setLoading(true);
 
   
 );
-}
+};
+
