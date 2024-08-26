@@ -51,7 +51,7 @@ if(searchTermFromUrl)
 
       <form onSubmit = {handleSubmit} className='bg-slate-100 p-3 rounded-lg flex item-center'>
         <input type="text" placeholder='Search..'
-         classname='bg-transparent focus:outline-none w-24 sm:w-64'
+         className='bg-transparent focus:outline-none w-24 sm:w-64'
          value = {searchTerm}
          onChange = {(e) => setSearchTerm(e.target.value)}
 
