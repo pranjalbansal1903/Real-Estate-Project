@@ -358,7 +358,7 @@ type="number" id='discountPrice' min='0' max='100000' required className='p-3 bo
       
 
           <button disabled={loading || uploading} className='bg-slate-700 text-white hover:opacity-95 disabled:opacity-80 text-xl p-3 rounded-lg'>
-            {loading ? 'Creating...' : 'Update Listing'}
+            {loading ? 'Updating...' : 'Update Listing'}
           </button>
           {error && <p className='text-red-700 text-sm'>
             {error}
