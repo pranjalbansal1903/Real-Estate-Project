@@ -348,3 +348,4 @@ type="number" id='discountPrice' min='0' max='100000' required className='p-3 bo
     </main>
   );
 }
+
