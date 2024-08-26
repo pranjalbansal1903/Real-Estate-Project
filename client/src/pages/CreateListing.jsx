@@ -11,7 +11,7 @@ export default function CreateListing() {
     name:'',
     description:'',
     address : '',
-    type : 'rent',
+    type : 'sale',
     bedrooms:1,
     bathrooms:1,
     regularPrice: 1,
@@ -104,7 +104,7 @@ const handleRemoveImage = (index) =>{
 };
 
 const handleChange=(e) =>{
-if (e.target.id === 'sale' || e.target.id==='rent'){
+if (e.target.id === 'sell' || e.target.id ==='rent'){
   setFormData({
 ...formData,
 type: e.target.id
@@ -208,7 +208,7 @@ setLoading(false);
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input onChange={handleChange} 
-              checked={formData.type ==='sale'}
+              checked={formData.type === 'sale'}
               type='checkbox' id='sell' className='w-5' />
               <span>Sell</span>
             </div>
