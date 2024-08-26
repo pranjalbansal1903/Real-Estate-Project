@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
-import 'swiper/css/bundle'
+import 'swiper/css/bundle';
 
 export default function Home() {
 
@@ -55,7 +55,7 @@ SwiperCore.use([Navigation]);
 
     }
 
-    }
+    };
 
     const fetchSaleListings = async () =>{
 try{
@@ -148,7 +148,7 @@ offerListings.map((listing)=>(
   {
     offerListings && offerListings.length > 0 && (
 
-      <div className=''>
+      <div>
         <div className='my-3'>
 
           <h2 className='text-2xl font-semibold text-slate-600 '> Recent offers </h2>
@@ -177,7 +177,7 @@ offerListings.map((listing)=>(
   {
     rentListings && rentListings.length > 0 && (
 
-      <div className=''>
+      <div>
         <div className='my-3'>
 
           <h2 className='text-2xl font-semibold text-slate-600 '> Recent places for rent </h2>
@@ -206,7 +206,7 @@ offerListings.map((listing)=>(
   {
     saleListings && saleListings.length > 0 && (
 
-      <div className=''>
+      <div>
         <div className='my-3'>
 
           <h2 className='text-2xl font-semibold text-slate-600 '> Recent places for sale </h2>
