@@ -1,3 +1,2 @@
 # Real-Estate-Project
-Real Estate Project that allows you to do CRUD operations
-TESTING DEVELOP
+This project demonstrates a fully responsive real estate web application built from scratch using the MERN stack—MongoDB, Express.js, React, and Node.js. It features advanced functionalities such as email/password and Google OAuth authentication, comprehensive CRUD operations for property listings, and a user-friendly interface for easy management of listings. The web application also incorporates advanced search capabilities for filtering and sorting listings. Additionally, the project is deployed using Render. This repository serves as an excellent example of full-stack development and is a valuable resource for those looking to expand their web development skills.
