@@ -15,12 +15,12 @@ const navigate = useNavigate();
     e.preventDefault();
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set('searchTerm', searchTerm);
-    const searchQuery = urlParams.toString();
+    const searchQuery = `?${urlParams.toString()}`;
     navigate(`/search${searchQuery}`);
   };
 
   useEffect(() => {
-const urlParams = new URLSearchParams(location.search);
+const urlParams = new URLSearchParams(window.location.search);
 const searchTermFromUrl= urlParams.get('searchTerm');
 if(searchTermFromUrl)
 {
@@ -29,7 +29,7 @@ if(searchTermFromUrl)
 }
 
 
-  }, [location.search]);
+  }, [window.location.search]);
   return (
     
     <header className='bg-slate-200 shadow-md'>
