@@ -157,7 +157,7 @@ offerListings.map((listing)=>(
             </Link>
             </div>
 
-            <div className='flex flex-nowrap gap-4'>
+            <div className='flex flex-wrap gap-4'>
               {
                 offerListings.map((listing) =>(
 
