@@ -133,11 +133,10 @@ dispatch(deleteUserFailure(error.message));
 }
 };
 
-const handleSignOut = async() =>
-{
+const handleSignOut = async() => {
 
   try{
-    dispatch(signOutUserStart())
+    dispatch(signOutUserStart());
 
 const res = await fetch('/api/auth/signout');
 const data = await res.json();
@@ -153,9 +152,10 @@ dispatch(deleteUserSuccess(data));
 
   catch(error)
   {
-    dispatch(signOutUserFailure(error.message));
+    dispatch(deleteUserFailure(error.message));
   }
-}
+};
+
 const handleShowListings = async() =>{
 
 

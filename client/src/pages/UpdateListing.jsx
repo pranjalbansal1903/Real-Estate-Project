@@ -125,7 +125,7 @@ const handleRemoveImage = (index) =>{
 };
 
 const handleChange=(e) =>{
-if (e.target.id === 'sale' || e.target.id==='rent'){
+if (e.target.id === 'sell' || e.target.id==='rent'){
   setFormData({
 ...formData,
 type: e.target.id
@@ -224,13 +224,13 @@ setLoading(false);
            type="text" placeholder='Name' className='border p-3 rounded-lg' id='name' maxLength='62' minLength='10' required />
           <textarea  onChange={handleChange} value = {formData.description}
           placeholder='Description' className='border p-3 rounded-lg' id='description' required />
-          <input  
+          <input  onChange={handleChange} value = {formData.address}
            type="text" placeholder='Address' className='border p-3 rounded-lg' id='address' required />
 
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input onChange={handleChange} 
-              checked={formData.type ==='sale'}
+              checked={formData.type ==='sell'}
               type='checkbox' id='sell' className='w-5' />
               <span>Sell</span>
             </div>
@@ -282,7 +282,7 @@ setLoading(false);
             <div className='flex items-center gap-2'>
               <input onChange={handleChange} 
               value={formData.regularPrice}
-               type='number' id='regularPrice' min='1' max='10' required className='p-3 border border-gray-300' />
+               type='number' id='regularPrice' min='50' max='10000000' required className='p-3 border border-gray-300' />
               <div className='flex flex-col items-center'>
                 <p>Regular Price</p>
                 {formData.type === 'rent' &&(
@@ -297,7 +297,7 @@ setLoading(false);
 <div className='flex items-center gap-2'>
 <input onChange={handleChange} 
 value={formData.discountPrice}
-type="number" id='discountPrice' min='0' max='100000' required className='p-3 border border-gray-300' />
+type="number" id='discountPrice' min='0' max='10000000' required className='p-3 border border-gray-300' />
 <div className='flex flex-col items-center'>
   <p>Discounted Price</p>
   {formData.type === 'rent' &&(

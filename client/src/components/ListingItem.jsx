@@ -11,7 +11,7 @@ export default function ListingItem({listing}) {
   <Link to ={`/listing/${listing._id}`}>
   <img  src ={listing.imageUrls[0] || 'https://lh6.googleusercontent.com/proxy/pY4RJooU7j2teGhMlq3Kok4i5rx1QzSso2cmxLc7cQOnwDUALJLo3YZO6FqpNqvrbSfY8kjT2Nnjs8k0cs_18mZyyJID1Xtsc01mNdolJtw'} 
   alt = 'listing cover'
-className='h-[320px] sm:h-[22px] w-full object-cover hover:scale-105 
+className='h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 
 transition-scale duration-300'
 
 />
@@ -38,7 +38,7 @@ transition-scale duration-300'
 
   <p className='text-slate-500 mt-2 font-semibold'>
     $
-    {listing.offer ? listing.discountPrice.toLocaleString('en-US') : listing.regularPric.toLocaleString('en-US')}
+    {listing.offer ? listing.discountPrice.toLocaleString('en-US') : listing.regularPrice.toLocaleString('en-US')}
     {listing.type === 'rent' && ' / month'}
   </p>
 

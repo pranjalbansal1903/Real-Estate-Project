@@ -11,7 +11,7 @@ export default function CreateListing() {
     name:'',
     description:'',
     address : '',
-    type : 'sale',
+    type : 'rent',
     bedrooms:1,
     bathrooms:1,
     regularPrice: 1,
@@ -104,7 +104,7 @@ const handleRemoveImage = (index) =>{
 };
 
 const handleChange=(e) =>{
-if (e.target.id === 'sell' || e.target.id ==='rent'){
+if (e.target.id === 'sell' || e.target.id === 'rent'){
   setFormData({
 ...formData,
 type: e.target.id
@@ -208,7 +208,7 @@ setLoading(false);
           <div className='flex gap-6 flex-wrap'>
             <div className='flex gap-2'>
               <input onChange={handleChange} 
-              checked={formData.type === 'sale'}
+              checked={formData.type === 'sell'}
               type='checkbox' id='sell' className='w-5' />
               <span>Sell</span>
             </div>
@@ -253,7 +253,7 @@ setLoading(false);
             <div className='flex items-center gap-2'>
               <input onChange={handleChange} 
               value={formData.bathrooms}
-               type="number" id='bathrooms' min='1' max='100000' required className='p-3 border border-gray-300' />
+               type="number" id='bathrooms' min='1' max='10' required className='p-3 border border-gray-300' />
               <p>Baths</p>
             </div>
 
@@ -275,7 +275,7 @@ setLoading(false);
 <div className='flex items-center gap-2'>
 <input onChange={handleChange} 
 value={formData.discountPrice}
-type="number" id='discountPrice' min='0' max='100000' required className='p-3 border border-gray-300' />
+type='number' id='discountPrice' min='0' max='100000' required className='p-3 border border-gray-300' />
 <div className='flex flex-col items-center'>
   <p>Discounted Price</p>
   {formData.type === 'rent' && (
