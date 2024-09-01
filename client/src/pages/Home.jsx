@@ -60,7 +60,7 @@ SwiperCore.use([Navigation]);
     const fetchSaleListings = async () =>{
 try{
 
-const res = await fetch ('/api/listing/get?type=sale&limit=4');
+const res = await fetch ('/api/listing/get?type=sell&limit=4');
 const data = await res.json();
 setSaleListings(data);
 
@@ -209,7 +209,7 @@ offerListings.map((listing)=>(
         <div className='my-3'>
 
           <h2 className='text-2xl font-semibold text-slate-600 '> Recent places for sale </h2>
-            <Link className='text-sm text-blue-800 hover:underline' to = {'/search?type=sale'}>
+            <Link className='text-sm text-blue-800 hover:underline' to = {'/search?type=sell'}>
             Show more places for sale
 
             </Link>
