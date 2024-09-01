@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-
+import path from 'path';
 
 // Path to .env file relative to index.js
 dotenv.config();
@@ -33,7 +33,7 @@ import listingRouter from './routes/listing.route.js';
     }
   })();
 
-
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -51,6 +51,8 @@ app.listen(3000,()=>{
 app.use ("/api/user", userRouter);
 app.use ("/api/auth", authRouter);
 app.use ("/api/listing", listingRouter);
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
 
 
 
